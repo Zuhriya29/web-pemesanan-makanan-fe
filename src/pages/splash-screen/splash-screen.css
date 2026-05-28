@@ -1,0 +1,62 @@
+.utama-splashscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100vh;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("/assets/images/bg-image.png") center/cover no-repeat;
+    color: white;
+}
+
+.utama-splashscreen img {
+    border-radius: 10px;
+    width: 15vw;
+}
+
+.utama-splashscreen h1 {
+    font-weight: bold !important;
+    font-size: 2em !important;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.detail-splashscreen {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.detail-splashscreen p {
+    font-weight: 500 !important;
+    font-size: 1em !important;
+    margin-top: 0rem;
+}
+
+/* === Tablet === */
+@media (max-width: 1023px) {
+    .utama-splashscreen img {
+        width: 45vw;
+    }
+}
+
+/* === Mobile === */
+@media (max-width: 767px) {
+
+    .utama-splashscreen img {
+        width: 60vw;
+    }
+
+    .utama-splashscreen h1 {
+        font-weight: bold !important;
+        font-size: 1.5em !important;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    .detail-splashscreen p {
+        font-size: 0.85em !important;
+    }
+}

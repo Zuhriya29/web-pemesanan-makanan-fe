@@ -1,0 +1,119 @@
+.judul-riwayat-pemesanan {
+    font-size: 1.5em !important;
+    margin: 1rem 0rem 3rem 5rem;
+    text-align: left;
+}
+
+.elemen-riwayat-pemesanan {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.elemen-riwayat-pemesanan:hover {
+    transform: scale(1.03);
+}
+
+.kiri-elemen-riwayat-pemesanan {
+    display: flex;
+}
+
+.kiri-elemen-riwayat-pemesanan img {
+    border-radius: 10px 0px 0px 10px;
+    height: 10rem;
+    object-fit: cover;
+    width: 10rem;
+}
+
+.text-riwayat-pemesanan {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem !important;
+}
+
+.text-riwayat-pemesanan h1 {
+    color: green;
+    font-size: 1.5em;
+}
+
+.text-riwayat-pemesanan p {
+    font-size: 0.85em;
+}
+
+.text-riwayat-pemesanan-2 {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 2rem 0rem 0rem;
+    text-align: right;
+}
+
+.text-riwayat-pemesanan-2 h1 {
+    font-size: 1.2em;
+    color: var(--hover-second-color);
+}
+
+.text-riwayat-pemesanan-2 p {
+    font-size: 1em;
+}
+
+.selengkapnya {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 0.25rem;
+    justify-content: end;
+    margin: 0;
+}
+
+.selengkapnya p {
+    font-size: 0.85em;
+    margin: 0;
+}
+
+.selengkapnya svg {
+    width: 20px;
+}
+
+.selengkapnya:hover,
+.selengkapnya p:hover {
+    color: var(--hover-primary-color);
+    font-weight: bolder;
+}
+
+/* === Mobile === */
+@media (max-width: 767px) {
+    .judul-riwayat-pemesanan {
+        margin: 1rem 0rem 3rem 3rem;
+    }
+
+    .elemen-riwayat-pemesanan {
+        margin: 1.5rem;
+    }
+
+    .kiri-elemen-riwayat-pemesanan img {
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .text-riwayat-pemesanan {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem !important;
+    }
+
+    .text-riwayat-pemesanan h1 {
+        font-size: 0.9em;
+    }
+
+    .text-riwayat-pemesanan p {
+        font-size: 0.8em;
+    }
+
+    .text-riwayat-pemesanan-2 {
+        display: none;
+    }
+}

@@ -1,0 +1,214 @@
+.utama-cam-scanner {
+  border: 1px solid gray;
+  border-radius: 10px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 600px;
+}
+
+#reader {
+  margin: 1.5rem auto;
+  width: 500px;
+}
+
+.utama-button-scanner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.start-scanner, .stop-scanner {
+  border: none !important;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+.start-scanner {
+  background-color: var(--primary-color);
+}
+
+.start-scanner:hover {
+  background-color: var(--hover-primary-color);
+  color: white;
+}
+
+.start-scanner:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.start-scanner:disabled:hover {
+  background-color: var(--hover-primary-color);
+}
+
+.stop-scanner {
+  background-color: var(--second-color);
+  color: white;
+}
+
+.stop-scanner:hover {
+  background-color: var(--hover-second-color);
+  color: black;
+}
+
+.utama-hasil-scan {
+  margin: 3rem 5rem;
+}
+
+.hasil-scan {
+  font-size: 1.5em;
+  margin-bottom: 2rem;
+}
+
+.total-harga-qc {
+  width: 10vw;
+  text-align: center;
+}
+
+.item-produk-qc {
+  font-size: 0.85em;
+  vertical-align: top;
+}
+
+.produk-row-qc {
+  display: flex;
+}
+
+.jumlah-produk-qc {
+  padding: 0 1rem;
+}
+
+.harga-produk-qc {
+  font-weight: 550;
+}
+
+.area-struk {
+  display: none;
+}
+
+@media print {
+
+  body * {
+    visibility: hidden;
+  }
+
+  .area-struk,
+  .area-struk * {
+    visibility: visible;
+  }
+
+  .area-struk {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+  }
+
+  .area-struk p {
+    font-size: 0.9em;
+  }
+
+  .struk {
+    padding: 10px;
+  }
+
+  .title-struk {
+    text-align: center;
+  }
+
+  .title-struk img{
+    width: 20mm;
+  }
+
+  .title-struk h1 {
+    margin-top: 1rem;
+    font-size: 1.2em !important;
+  }
+
+  .tgl-struk {
+    display: flex;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .item-tgl-struk, .titik-item-tgl-struk {
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .titik-item-tgl-struk {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .row-struk {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .penutup-struk {
+    text-align: center;
+  }
+}
+
+/* === Tablet === */
+@media (max-width: 1023px) {
+  .utama-cam-scanner {
+  width: 80vw;
+}
+
+#reader {
+  width: 70vw;
+}
+
+.utama-hasil-scan {
+  margin: 3rem 3rem;
+}
+
+.hasil-scan {
+  font-size: 1.5em;
+  margin-bottom: 2rem;
+}
+}
+
+/* === Mobile === */
+@media (max-width: 767px) {
+.utama-cam-scanner {
+  width: 90vw;
+}
+
+#reader {
+  width: 80vw;
+}
+
+.start-scanner, .stop-scanner {
+  font-size: 0.85em;
+  padding: 1rem;
+}
+
+.utama-hasil-scan {
+  margin: 3rem 2rem;
+}
+
+.hasil-scan {
+  font-size: 1.2em;
+}
+
+.total-harga-qc {
+  width: none;
+  text-align: center;
+}
+
+.item-produk-qc {
+  width: 50vw;
+}
+
+  }

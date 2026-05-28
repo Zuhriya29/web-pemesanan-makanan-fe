@@ -1,0 +1,11 @@
+
+.status-available {
+    color: var(--third-color) !important;
+    font-weight: 600;
+}
+
+.status-unvailable {
+    color: var(--second-color) !important;
+    font-weight: 600;
+}
+

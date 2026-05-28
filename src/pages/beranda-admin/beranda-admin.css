@@ -1,0 +1,103 @@
+.utama-elemen-beranda-admin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 3rem;
+}
+
+.elemen-beranda-admin,
+.elemen-beranda-admin-logout {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    padding: 3rem 0;
+    margin: 1.5rem 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    width: 20vw;
+}
+
+
+
+.elemen-beranda-admin svg,
+.elemen-beranda-admin-logout svg {
+    width: 8rem;
+}
+
+.elemen-beranda-admin p,
+.elemen-beranda-admin-logout p {
+    font-size: 1em;
+    font-weight: 600 !important;
+    margin-top: 1rem;
+}
+
+.elemen-beranda-admin:hover,
+.elemen-beranda-admin-logout:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.elemen-beranda-admin {
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.elemen-beranda-admin:hover {
+    background-color: var(--hover-primary-color);
+    color: white;
+}
+
+.elemen-beranda-admin-logout {
+    background-color: var(--second-color);
+    color: white;
+}
+
+.elemen-beranda-admin-logout:hover {
+    background-color: var(--hover-second-color);
+    color: black;
+}
+
+/* === Tablet === */
+@media (max-width: 1023px) {
+    .utama-elemen-beranda-admin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem 3rem;
+}
+
+    .elemen-beranda-admin,
+    .elemen-beranda-admin-logout {
+        width: 30vw;
+    }
+
+    .elemen-beranda-admin svg,
+    .elemen-beranda-admin-logout svg {
+        width: 6rem;
+    }
+
+    .elemen-beranda-admin p,
+    .elemen-beranda-admin-logout p {
+        font-size: 1em;
+    }
+}
+
+/* === Mobile === */
+@media (max-width: 767px) {
+
+    .elemen-beranda-admin,
+    .elemen-beranda-admin-logout {
+        width: 90vw;
+    }
+
+    .elemen-beranda-admin svg,
+    .elemen-beranda-admin-logout svg {
+        width: 5rem;
+    }
+
+    .elemen-beranda-admin p,
+    .elemen-beranda-admin-logout p {
+        font-size: 0.85em;
+    }
+}

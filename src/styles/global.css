@@ -1,0 +1,795 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+h1,
+button,
+label,
+thead {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold !important;
+}
+
+p,
+a,
+input,
+select,
+option,
+tbody {
+  font-family: "Lato", sans-serif !important;
+}
+
+:root {
+  --primary-color: #F5C518;
+  --second-color: #bd2d20;
+  --third-color: #1f8d1f;
+
+  --hover-primary-color: #a07800ec;
+  --hover-second-color: #CD4B40;
+  --hover-third-color: #006400;
+
+  --main-font: "Montserrat", sans-serif;
+  --seccond-font: "Lato", sans-serif;
+}
+
+/* Untuk Chrome, Edge, Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+th {
+  text-align: center !important;
+}
+
+.kembali,
+.kembali-admin {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.kembali {
+  position: absolute;
+  top: 3rem;
+  left: 2rem;
+}
+
+.kembali-admin {
+  position: absolute;
+  top: 6rem;
+  left: 2rem;
+}
+
+.kembali svg,
+.kembali-admin svg {
+  margin: 0;
+  width: 20px !important;
+}
+
+.kembali p,
+.kembali-admin p {
+  font-size: 0.85em;
+  font-weight: 600;
+  margin: 0;
+  padding-left: 0.5rem;
+}
+
+.kembali:hover,
+.kembali p:hover,
+.kembali svg:hover {
+  color: var(--hover-primary-color);
+  font-weight: 800;
+}
+
+.kembali-admin:hover,
+.kembali-admin p:hover,
+.kembali-admin svg:hover {
+  color: var(--hover-primary-color);
+  font-weight: 800;
+}
+
+
+
+.button-register button {
+  background-color: var(--primary-color) !important;
+  width: 100%;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 10px;
+  font-family: var(--main-font) !important;
+  font-size: 0.85em;
+  font-weight: bold !important;
+  color: white;
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.button-register button:hover {
+  background-color: var(--hover-second-color) !important;
+  color: black;
+}
+
+.keterangan-data {
+  font-family: var(--main-font);
+  text-align: center;
+  font-weight: 600;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 0.85em;
+}
+
+.posisi-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: var(--main-font);
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.loading-dots span {
+  animation: blink 1.4s infinite both;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.button-register button:disabled,
+.button-register button.btn-loading {
+  background-color: var(--hover-second-color) !important;
+  cursor: not-allowed;
+  color: white !important;
+}
+
+/* MATIKAN hover */
+.button-register button:disabled:hover,
+.button-register button.btn-loading:hover {
+  background-color: var(--hover-second-color) !important;
+  color: white !important;
+}
+
+
+.judul-utama {
+  font-size: 1.5em !important;
+  margin: 6.5rem 0rem 3rem 5rem;
+  text-align: left;
+}
+
+.judul-beranda-admin {
+  align-items: center;
+  display: flex;
+  margin-bottom: 2rem;
+  margin-left: 5rem;
+  margin-top: 6rem;
+  line-height: 1;
+}
+
+.judul-beranda-admin svg {
+  width: 2rem;
+}
+
+.judul-beranda-admin h1 {
+  font-size: 1.5em;
+  margin-bottom: 0 !important;
+  margin-left: 0.5rem;
+  padding: 0 !important;
+}
+
+.produk-tidak-ditemukan {
+  align-items: center;
+  color: var(--hover-second-color);
+  display: flex;
+  font-size: 1em !important;
+  font-weight: 800 !important;
+  justify-content: center;
+  margin: 8rem 0;
+  text-align: center;
+}
+
+.custom-swal {
+  font-family: var(--seccond-font);
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.custom-swal .swal2-loader {
+  border-color: var(--hover-second-color) transparent var(--hover-second-color) transparent;
+}
+
+.swal2-icon.swal2-question, .swal2-icon.swal2-info {
+  border-color: var(--primary-color) !important;   /* lingkaran */
+  color: var(--primary-color) !important;          /* tanda tanya */
+}
+
+.custom-title {
+  font-family: var(--main-font);
+  font-size: 1.5em;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.custom-text {
+  font-size: 0.85em;
+  color: #555;
+}
+
+.custom-confirm-button,
+.custom-cancel-button {
+  color: white !important;
+  border-radius: 8px !important;
+  border: none !important;
+  padding: 8px 20px !important;
+  font-family: var(--main-font);
+  transition: background-color 0.3s ease !important;
+}
+
+.custom-confirm-button {
+  background-color: var(--primary-color) !important;
+  color: black !important;
+}
+
+.custom-confirm-button:hover {
+  background-color: #a07800ec !important;
+  color: white !important;
+}
+
+.custom-cancel-button {
+  background-color: var(--second-color) !important;
+  color: white !important;
+}
+
+.custom-cancel-button:hover {
+  background-color: var(--hover-second-color) !important;
+  color: black !important;
+}
+
+.custom-dropdown,
+.custom-dropdown-2 {
+  position: relative;
+}
+
+.dropdown-display {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--seccond-font) !important;
+  background-color: white !important;
+  border: 1.5px solid var(--primary-color) !important;
+  border-radius: 5px !important;
+  outline: none;
+  padding: 0.5rem 1rem;
+  color: #39393d !important;
+  font-size: 0.85em !important;
+}
+
+.dropdown-display svg {
+  color: #39393d;
+  margin: 0;
+  width: 15px;
+}
+
+.dropdown-display span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1.5px solid var(--primary-color) !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.dropdown-item {
+  font-family: var(--seccond-font) !important;
+  font-size: 0.85em !important;
+  color: #39393d !important;
+  padding: 0.5rem 1rem !important;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.dropdown-item:hover {
+  color: white !important;
+  font-weight: bold !important;
+  background: var(--hover-primary-color) !important;
+}
+
+.utama-filter {
+  display: flex;
+  margin: 3rem 5rem;
+}
+
+.utama-filter p {
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.elemen-filter {
+  align-items: center;
+  display: flex;
+  margin-right: 2rem;
+}
+
+.custom-dropdown-2 {
+  margin-left: 1rem;
+  width: 20vw !important;
+}
+
+.filter-mode {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.custom-dropdown-2 .dropdown-display {
+  width: 20vw !important;
+}
+
+.search-filter input {
+  background-color: white !important;
+  border: 1.5px solid var(--primary-color) !important;
+  border-radius: 5px !important;
+  color: #39393d !important;
+  font-family: var(--seccond-font) !important;
+  font-size: 0.85em !important;
+  outline: none;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  width: 20vw;
+}
+
+.button-filter {
+  font-size: 1em !important;
+  padding: 0.5rem 2rem !important;
+
+}
+
+.button-filter svg {
+  margin-right: 0.5rem;
+  width: 1.2rem !important;
+}
+
+.utama-data-tabel {
+  align-items: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin: 0 5rem !important;
+}
+
+.utama-button-handle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.handle-succes,
+.handle-warning,
+.handle-danger,
+.handle-invoice {
+  align-items: center !important;
+  border: none !important;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-size: 0.85em;
+  line-height: 1;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  width: fit-content;
+}
+
+.handle-succes svg,
+.handle-warning svg,
+.handle-danger svg,
+.handle-invoice svg {
+  padding: 0 !important;
+  margin-right: 0.3rem;
+  margin-top: 0rem;
+  margin-left: 0rem;
+  width: 0.85rem;
+}
+
+.handle-succes {
+  background-color: var(--third-color);
+}
+
+.handle-succes:hover {
+  background-color: var(--hover-third-color);
+  color: white;
+}
+
+.handle-warning, .handle-invoice {
+  background-color: var(--primary-color);
+}
+
+.handle-warning:hover, .handle-invoice:hover {
+  background-color: var(--hover-primary-color);
+  color: white;
+}
+
+.handle-danger {
+  background-color: var(--second-color);
+  color: white;
+}
+
+.handle-danger:hover {
+  background-color: var(--hover-second-color);
+  color: black;
+}
+
+.form-qr-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.utama-input-qr-form {
+  display: flex;
+  justify-content: center;
+}
+
+.input-qr-form {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 2rem 2rem 2rem;
+}
+
+.input-qr-form label {
+  font-family: var(--seccond-font);
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 0.5rem;
+}
+
+.custom-dropdown {
+  width: 100%;
+}
+
+.input-qr-form input,
+.custom-dropdown .dropdown-display,
+.custom-file-container {
+  background-color: white !important;
+  border: 1.5px solid var(--primary-color) !important;
+  border-radius: 5px !important;
+  outline: none;
+  padding: 0.5rem 1rem;
+  width: 40vw !important;
+  color: #39393d !important;
+  font-size: 0.85em !important;
+}
+
+.input-qr-form ::placeholder {
+  font-family: var(--seccond-font) !important;
+  font-size: 0.85em !important;
+}
+
+.custom-file-container {
+  cursor: pointer;
+  padding: 0;
+}
+
+.custom-file-input {
+  display: none;
+}
+
+.input-file {
+  display: flex;
+  align-items: center;
+}
+
+.custom-file-label {
+  background-color: var(--hover-primary-color);
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.custom-file-label:hover {
+  color: white;
+  background-color: var(--hover-second-color);
+}
+
+.file-name {
+  font-family: var(--seccond-font) !important;
+  font-size: 0.85em !important;
+  color: #757575 !important;
+  margin-left: 1rem;
+  font-weight: 500 !important;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8rem;
+  margin-top: 2rem;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: var(--hover-primary-color);
+}
+
+.pagination button:disabled {
+  background-color: var(--hover-primary-color);
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: var(--hover-second-color);
+  color: #fff;
+}
+
+.form-versi-2 {
+  margin-top: 3.5rem !important;
+  margin-bottom: 5rem !important;
+}
+
+.button-utama-2 {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 5rem auto !important;
+  width: 20vw !important;
+}
+
+.form-single {
+  display: flex !important;
+  justify-content: start !important;
+  margin-left: 4rem;
+}
+
+.img-tabel {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    object-fit: cover;
+}
+
+.preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.preview-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* === Tablet === */
+@media (max-width: 1023px) {
+  .judul-beranda-admin {
+    margin-left: 3rem;
+  }
+
+  .utama-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 3rem;
+  }
+
+  .utama-filter p {
+    font-size: 0.85rem;
+  }
+
+  .custom-dropdown-2 {
+    margin-left: 1rem;
+    width: 25vw !important;
+  }
+
+  .custom-dropdown-2 .dropdown-display {
+    width: 25vw !important;
+  }
+
+  .search-filter input {
+    width: 25vw;
+  }
+
+  .utama-data-tabel {
+    margin: 0 3rem;
+  }
+
+  .button-utama-2 {
+    width: 30vw !important;
+  }
+
+  .form-single {
+    margin-left: 1rem;
+  }
+}
+
+/* === Mobile === */
+@media (max-width: 767px) {
+  thead {
+    font-size: 0.85em !important;
+  }
+
+  tbody {
+    font-size: 0.75em !important;
+  }
+
+  .button-register button {
+    padding: 0.80rem;
+  }
+
+  .posisi-loading {
+    font-size: 1.2em;
+  }
+
+  .judul-utama {
+    margin: 6.5rem 0rem 3rem 0rem;
+    text-align: center;
+  }
+
+  .judul-beranda-admin {
+    margin-left: 2rem;
+  }
+
+  .judul-beranda-admin svg {
+    width: 1.5rem;
+  }
+
+  .judul-beranda-admin h1 {
+    font-size: 1.2em;
+  }
+
+  .utama-filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3rem 2rem;
+  }
+
+  .utama-filter p {
+    font-size: 0.75em;
+  }
+
+  .elemen-filter {
+    margin-right: 0rem;
+  }
+
+  .custom-dropdown-2 {
+    margin-left: 1rem;
+    width: 60vw !important;
+  }
+
+  .custom-dropdown-2 .dropdown-display {
+    width: 60vw !important;
+  }
+
+  .custom-dropdown .dropdown-display,
+  .custom-dropdown-2 .dropdown-display {
+    font-size: 0.75em !important;
+  }
+
+  .search-filter input {
+    width: 62.5vw;
+  }
+
+  .button-filter {
+    font-size: 0.75em !important;
+  }
+
+  .utama-data-tabel {
+    margin: 0 2rem;
+  }
+
+  .handle-succes,
+  .handle-warning,
+  .handle-danger {
+    font-size: 0.75em;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  .utama-input-qr-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0rem auto;
+  }
+
+  .input-qr-form {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 0.85rem 0;
+  }
+
+  .input-qr-form label {
+    font-size: 0.85em;
+  }
+
+  .input-qr-form input,
+  .custom-dropdown .dropdown-display,
+  .custom-file-container {
+    width: 85vw !important;
+    font-size: 0.80em !important;
+  }
+
+  .dropdown-display {
+    font-size: 0.80em !important;
+  }
+
+  .dropdown-display svg {
+    width: 10px;
+  }
+
+  .dropdown-item {
+    font-size: 0.80em !important;
+  }
+
+  .custom-file-label {
+    text-align: center;
+    font-size: 0.80em;
+  }
+
+  .file-name {
+    font-size: 0.80em !important;
+  }
+
+  .button-utama-2 {
+    width: 60vw !important;
+  }
+
+  .form-single {
+    margin-left: 2rem;
+  }
+}

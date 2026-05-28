@@ -1,0 +1,122 @@
+.judul-detail-riwayat-pesanan {
+    font-size: 1.5em;
+    text-align: left;
+    margin-left: 5rem;
+}
+
+.utama-elemen-detail-riwayat-pesanan {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin: 2rem 5rem;
+    padding: 2rem 0rem;
+}
+
+.elemen-detail-riwayat-pesanan {
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem 5rem;
+    padding: 3rem 0rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kiri-elemen-detail-riwayat-pesanan {
+    display: flex;
+}
+
+.kiri-elemen-detail-riwayat-pesanan img {
+    border-radius: 10px;
+    height: 10rem;
+    object-fit: cover;
+    width: 10rem;
+}
+
+.text-detail-riwayat-pesanan-1 {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem !important;
+}
+
+.text-detail-riwayat-pesanan-1 h1 {
+    font-size: 1.2em;
+}
+
+.text-detail-riwayat-pesanan-1 p {
+    font-size: 0.85em;
+}
+
+.total-detail-riwayat-pesanan {
+    font-size: 1.5em;
+    margin-top: 6rem;
+}
+
+.tanggal-detail-riwayat-pesanan {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5rem;
+    margin-right: 5rem;
+    margin-top: 5rem;
+    text-align: right;
+}
+
+/* === Tablet === */
+@media (max-width: 1023px) {
+    .utama-elemen-detail-riwayat-pesanan {
+        margin: 2rem 4rem;
+        padding: 2rem 0rem;
+    }
+
+    .elemen-detail-riwayat-pesanan {
+        margin: 0rem 3rem;
+        padding: 3rem 0rem;
+    }
+}
+
+/* === Mobile === */
+@media (max-width: 767px) {
+    .utama-elemen-detail-riwayat-pesanan {
+        margin: 2rem;
+        padding: 2rem 0rem;
+    }
+
+    .elemen-detail-riwayat-pesanan {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0rem 2rem;
+    }
+
+    .kiri-elemen-detail-riwayat-pesanan {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .kiri-elemen-detail-riwayat-pesanan img {
+        height: 10rem;
+        width: 10rem;
+        margin: 0 auto;
+    }
+
+    .text-detail-riwayat-pesanan-1 {
+        flex-direction: column;
+        text-align: center;
+        margin: 1.5rem !important;
+    }
+
+    .text-detail-riwayat-pesanan-1 h1 {
+        font-size: 1em;
+    }
+
+    .text-detail-riwayat-pesanan-1 p {
+        font-size: 0.85em;
+    }
+
+    .total-detail-riwayat-pesanan {
+        font-size: 1em;
+        margin-top: 0rem;
+    }
+
+    .tanggal-detail-riwayat-pesanan {
+       font-size: 0.85em !important;
+        text-align: center;
+    }
+}

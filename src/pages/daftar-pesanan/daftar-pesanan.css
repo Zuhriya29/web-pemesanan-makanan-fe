@@ -1,0 +1,332 @@
+.utama-daftar-pesanan h1 {
+    margin-bottom: 1rem !important;
+}
+
+.hapus-semua-daftar-pesanan svg {
+    width: 20px;
+    margin-right: 0.5rem;
+}
+
+.hapus-semua-daftar-pesanan {
+    background-color: var(--hover-second-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    cursor: pointer;
+    font-family: var(--seccond-font);
+    font-size: 0.85em;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    margin: 1rem 5rem;
+    width: fit-content;
+}
+
+.hapus-semua-daftar-pesanan:hover {
+    background-color: var(--second-color);
+}
+
+.utama-item-daftar-pesanan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10rem;
+    margin-top: 2rem;
+}
+
+.item-daftar-pesanan {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    margin: 1.5rem 2.5rem;
+}
+
+.item-daftar-pesanan img {
+    border-radius: 5px 0px 0px 5px;
+    height: 10rem;
+    object-fit: cover;
+    width: 10rem;
+}
+
+.detail-item-daftar-pesanan {
+    display: flex;
+    flex-direction: column;
+    justify-content: end !important;
+    width: 20vw;
+    padding-right: 1rem;
+}
+
+.text-item-daftar-pesanan h1 {
+    font-size: 0.85em !important;
+    margin: 0.5rem 0 !important;
+    text-align: right !important;
+}
+
+.text-item-daftar-pesanan p {
+    font-size: 1.2em !important;
+    margin: 0 !important;
+    text-align: right !important;
+}
+
+.qty-control-item-daftar-pesanan {
+    display: flex;
+    justify-content: end;
+    margin: 1rem 0;
+}
+
+.qty-control-item-daftar-pesanan button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.2rem 0.8rem;
+    transition: 0.3s ease;
+}
+
+.qty-control-item-daftar-pesanan button:hover {
+    background-color: var(--hover-primary-color);
+}
+
+.qty-control-item-daftar-pesanan span {
+    border: 1px solid var(--primary-color);
+    padding: 0 1rem;
+    margin: 0 !important;
+}
+
+.loading-dots-dp {
+    border: none !important;
+}
+
+.loading-dots-dp-hapus-item {
+    display: block;
+    text-align: right;
+}
+
+.loading-dots-dp span,
+.loading-dots-dp-hapus-item span {
+    animation: blink 1.4s infinite both;
+    border: none;
+    padding: 0 0.5rem;
+    margin: 0;
+    color: var(--second-color) !important;
+    font-weight: 800;
+}
+
+.loading-dots-dp span:nth-child(1),
+.loading-dots-dp-hapus-item span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loading-dots-dp span:nth-child(2),
+.loading-dots-dp-hapus-item span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots-dp span:nth-child(3),
+.loading-dots-dp-hapus-item span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.2;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}
+
+.qty-control-item-daftar-pesanan button:disabled {
+    background-color: var(--hover-primary-color);
+    cursor: not-allowed;
+}
+
+.hapus-item-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 1.5rem;
+}
+
+.button-hapus-item-daftar-pesanan {
+    cursor: pointer;
+    font-family: var(--seccond-font);
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+.button-hapus-item-daftar-pesanan:hover {
+    color: var(--hover-second-color);
+    font-weight: 800;
+}
+
+.utama-total-daftar-pesanan {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+}
+
+.total-daftar-pesanan {
+    background-color: var(--primary-color);
+    border-radius: 10px 0 0 10px;
+    width: 75vw;
+}
+
+.total-daftar-pesanan h1 {
+    font-size: 2em !important;
+}
+
+.total-daftar-pesanan h1,
+.button-total-daftar-pesanan {
+    align-items: center;
+    display: flex;
+    justify-content: end;
+    margin: 0 !important;
+    padding: 1rem 2rem;
+}
+
+.button-total-daftar-pesanan {
+    background-color: var(--hover-second-color);
+    border-radius: 0 10px 10px 0;
+    color: white !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 15vw;
+    text-align: center;
+}
+
+.button-total-daftar-pesanan:hover {
+    background-color: var(--second-color);
+}
+
+/* === Tablet === */
+@media (max-width: 1023px) {
+
+    .utama-total-daftar-pesanan {
+        bottom: 2rem;
+    }
+
+    .total-daftar-pesanan {
+        width: 65vw;
+    }
+
+    .button-total-daftar-pesanan {
+        width: 25vw;
+    }
+}
+
+/* === Mobile === */
+@media (max-width: 767px) {
+
+    .hapus-semua-daftar-pesanan svg {
+        width: 15px;
+    }
+
+    .hapus-semua-daftar-pesanan {
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto !important;
+    }
+
+    .item-daftar-pesanan {
+        margin: 1rem 2.5rem;
+    }
+
+    .item-daftar-pesanan img {
+        height: 8.5rem;
+        width: 8.5rem;
+    }
+
+    .detail-item-daftar-pesanan {
+        width: 50vw;
+    }
+
+    .text-item-daftar-pesanan h1 {
+        font-size: 0.85em !important;
+    }
+
+    .text-item-daftar-pesanan p {
+        font-size: 1em !important;
+    }
+
+    .qty-control-item-daftar-pesanan {
+        font-size: 0.8em;
+        margin-top: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .qty-control-item-daftar-pesanan span {
+        padding: 0 0.85rem;
+    }
+
+    .loading-dots-dp span, .loading-dots-dp-hapus-item span {
+        animation: blink 1.4s infinite both;
+        border: none;
+        padding: 0 0.25rem;
+        margin: 0;
+        color: var(--second-color) !important;
+        font-weight: 1000;
+    }
+
+    .button-hapus-item-daftar-pesanan {
+        font-size: 0.8em;
+        margin-bottom: 0.5rem;
+    }
+
+    .utama-total-daftar-pesanan {
+        bottom: 2rem;
+    }
+
+    .total-daftar-pesanan h1 {
+        font-size: 1.2em !important;
+    }
+
+    .total-daftar-pesanan {
+        background-color: var(--primary-color);
+        border-radius: 10px 0 0 10px;
+        width: 55vw;
+    }
+
+    .utama-total-daftar-pesanan p {
+        font-size: 0.8rem !important;
+    }
+
+    .total-daftar-pesanan h1 {
+        align-items: center;
+        display: flex;
+        justify-content: end;
+        margin: 0 !important;
+        padding: 1.5rem 1rem;
+    }
+
+    .button-total-daftar-pesanan {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 0 !important;
+    }
+
+    .button-total-daftar-pesanan {
+        background-color: var(--hover-second-color);
+        border-radius: 0 10px 10px 0;
+        color: white !important;
+        cursor: pointer;
+        text-align: center;
+        width: 35vw;
+    }
+}

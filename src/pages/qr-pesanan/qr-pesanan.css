@@ -1,0 +1,163 @@
+.utama-qr-pesanan,
+.hasil-qr-pesanan {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.utama-qr-pesanan p {
+  text-align: center;
+  line-height: 2;
+  font-weight: 550;
+  margin: 1rem 5rem;
+}
+
+.hasil-qr-pesanan h1 {
+  font-size: 2em;
+  font-weight: 800 !important;
+  margin-bottom: 2rem;
+}
+
+.text-hasil-qr {
+  font-weight: 600;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.button-qr-pesanan {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-cetak-qr,
+.button-kembali-qr,
+.btn-loading-qr-pesanan {
+  width: 20vw;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 10px;
+  font-family: var(--main-font) !important;
+  font-weight: bold !important;
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.4);
+  margin-top: 2rem;
+}
+
+.button-cetak-qr,
+.btn-loading-qr-pesanan {
+  background-color: var(--primary-color) !important;
+  color: black;
+}
+
+.button-cetak-qr:hover {
+  background-color: var(--hover-primary-color) !important;
+  color: white;
+}
+
+.button-kembali-qr {
+  background-color: var(--second-color) !important;
+  color: white;
+}
+
+.button-kembali-qr:hover {
+  background-color: var(--hover-second-color) !important;
+  color: black;
+}
+
+.loading-dots-qr-pesanan span {
+  animation: blink 1.4s infinite both;
+  padding: 0.5rem !important;
+}
+
+.loading-dots-qr-pesanan span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots-qr-pesanan span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots-qr-pesanan span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.qr-timer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1.5rem;
+  line-height: 1;
+}
+
+.utama-qr-time {
+  font-weight: 600;
+  font-size: 0.85em;
+  margin-bottom: 1rem;
+}
+
+.second-qr-time {
+  color: var(--second-color);
+  margin: 0rem;
+  font-size: 1.5em !important;
+  font-weight: 800;
+}
+
+@media (max-width: 1023px) {
+
+  .text-hasil-qr {
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .qr-timer {
+    margin-top: 3rem;
+  }
+
+  .button-qr-pesanan button {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .utama-qr-pesanan p {
+    font-size: 0.85em;
+    margin: 1rem 2rem !important;
+  }
+
+  .hasil-qr-pesanan h1 { 
+margin-top: 5rem;
+  }
+
+  .text-hasil-qr {
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .qr-timer {
+    margin-top: 3rem;
+  }
+
+  .button-qr-pesanan button {
+    width: 60vw;
+  }
+}
