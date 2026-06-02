@@ -16,7 +16,7 @@ function SplashScreen() {
       } else if (user.role === "admin") {
         navigate("/beranda-admin");
       } 
-    }, 2000); // splash tetap muncul
+    }, 5000); // splash tetap muncul
 
     return () => clearTimeout(timer);
   }, [user, loading, navigate]);
