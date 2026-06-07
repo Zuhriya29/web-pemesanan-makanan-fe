@@ -1,17 +1,68 @@
-# React + Vite
+# Food Ordering Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for a Food Ordering Web Application built with React.js. This project provides a modern and responsive user interface for browsing menus, placing orders, managing accounts, and validating orders through QR Codes.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 Website: https://griya-dhahar-suroboyo.vercel.app/
 
-## React Compiler
+## Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+* User Registration and Login
+* Google OAuth Authentication
+* Email Verification Workflow
+* Password Reset Functionality
+* Food Menu Browsing
+* Shopping Cart Management
+* Order Placement
+* Order History
+* QR Code Display and Validation
+* Responsive Design
+* Protected Routes
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# web-pemesanan-makanan-fe
+* React.js
+* React Router
+* Axios
+* REST API Integration
+
+## Project Structure
+
+```text
+src/
+├── pages/
+├── routes/
+├── styles/
+├── context/
+├── lib/
+```
+
+## API Integration
+
+The frontend communicates with the backend through REST APIs built using Laravel.
+
+Backend Repository:
+https://github.com/Zuhriya29/web-pemesanan-makanan-be
+
+## Key Implementations
+
+* Built reusable React components for maintainable UI development.
+* Integrated Google OAuth authentication for seamless login and registration.
+* Implemented email verification and password recovery workflows.
+* Connected frontend services to Laravel REST APIs using Axios.
+* Developed protected routes to restrict unauthorized access.
+* Displayed QR Codes for order validation and tracking.
+
+## Installation
+
+```bash
+git clone https://github.com/Zuhriya29/web-pemesanan-makanan-fe.git
+cd web-pemesanan-makanan-fe
+npm install
+npm run dev
+```
+
+## Author
+
+Tasbi Khatuz Zuhriya
