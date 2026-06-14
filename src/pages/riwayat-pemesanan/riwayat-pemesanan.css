@@ -95,7 +95,8 @@
     }
 
     .kiri-elemen-riwayat-pemesanan img {
-        height: 6rem;
+        object-fit: cover;
+        height: 100%;
         width: 6rem;
     }
 
