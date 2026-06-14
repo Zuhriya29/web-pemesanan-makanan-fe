@@ -258,49 +258,11 @@ function KelolaPesanan() {
   const [uangBayar, setUangBayar] = useState(0);
   const [pesananCetak, setPesananCetak] = useState(null);
 
-  const handleCetakInvoice = async (pesanan) => {
+  const handleCetakInvoice = async () => {
 
-    const total = Number(pesanan?.total_harga) || 0;
+    const total = dataPesanan.total_harga;
 
-    const { value: bayar } = await Swal.fire({
-      title: "Input Pembayaran",
-      html: `
-      <input id="uang" type="number" class="swal2-input" placeholder="Jumlah uang dibayar">
-      <div id="kembalian" style="margin-top:10px;font-weight:bold"></div>
-    `,
-      showCancelButton: true,
-      confirmButtonText: "Cetak Struk",
-      customClass: { popup: "custom-swal", title: "custom-title", htmlContainer: "custom-text", confirmButton: "custom-confirm-button", cancelButton: "custom-cancel-button" },
-
-      didOpen: () => {
-        const input = document.getElementById("uang");
-        const kembaliDiv = document.getElementById("kembalian");
-
-        input.addEventListener("input", () => {
-          const bayar = Number(input.value) || 0;
-          const kembali = bayar - total;
-
-          kembaliDiv.innerHTML =
-            kembali >= 0
-              ? `Kembalian: Rp ${kembali.toLocaleString("id-ID")}`
-              : `Uang kurang: Rp ${Math.abs(kembali).toLocaleString("id-ID")}`;
-        });
-      },
-
-      preConfirm: () => {
-        const bayar = Number(document.getElementById("uang").value);
-        if (!bayar || bayar < total) {
-          Swal.showValidationMessage("Uang tidak cukup");
-          return false;
-        }
-        return bayar;
-      },
-    });
-
-    if (!bayar) return;
-
-    setUangBayar(bayar);
-    setPesananCetak(pesanan); // kalau kamu pakai data ini di template invoice
+    setUangBayar(total);
 
     setTimeout(() => window.print(), 300);
   };

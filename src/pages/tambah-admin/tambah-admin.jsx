@@ -57,11 +57,15 @@ function TambahAdmin() {
         formData
       );
 
+      const token = response.data.token;
+      localStorage.setItem("verify_token", token);
+
       // ✅ Jika password cocok
       Swal.fire({
         icon: "success",
-        title: "Akun admin Berhasil Ditambahkan!",
-        confirmButtonText: "Kembali",
+        title: "Registrasi Akun Admin Berhasil!",
+        text: "Silakan cek email kamu untuk verifikasi akun",
+        confirmButtonText: "OK",
         customClass: {
           popup: "custom-swal",
           title: "custom-title",
@@ -69,7 +73,7 @@ function TambahAdmin() {
           confirmButton: "custom-confirm-button",
         },
       }).then(() => {
-        navigate("/kelola-akun-admin");
+        navigate("/verifikasi-email");
       });
     } catch (error) {
 
