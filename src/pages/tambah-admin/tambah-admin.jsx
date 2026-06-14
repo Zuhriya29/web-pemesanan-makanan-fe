@@ -13,7 +13,7 @@ function TambahAdmin() {
 
   const [form, setForm] = useState({
     name: "",
-    nohp: "",
+    email: "",
     password: "",
     password_confirmation: "",
   });
@@ -47,7 +47,7 @@ function TambahAdmin() {
     try {
       const formData = new FormData();
       formData.append("name", form.name);
-      formData.append("nohp", form.nohp);
+      formData.append("email", form.email);
       formData.append("password", form.password);
       formData.append("password_confirmation", form.password_confirmation);
 
@@ -143,12 +143,12 @@ function TambahAdmin() {
             />
           </div>
           <div className="input-qr-form">
-            <label>Nomor HP :</label>
+            <label>Email :</label>
             <input
-              type="number"
-              name="nohp"
-              placeholder='Masukkan Nomor HP'
-              value={form.nohp}
+              type="email"
+              name="email"
+              placeholder='Masukkan Alamat Email'
+              value={form.email}
               onChange={handleChange}
               required
             />

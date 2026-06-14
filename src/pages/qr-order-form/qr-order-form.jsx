@@ -215,9 +215,9 @@ function QROrderForm() {
               placeholder='Masukkan Nomor HP'
               value={form.nohp}
                onChange={(e) => {
-      const onlyNumbers = e.target.value.replace(/\D/g, '');
-      setForm({ ...form, nohp: onlyNumbers });
-    }}
+    const onlyNumbers = e.target.value.replace(/\D/g, '');
+    setFormData((prev) => ({ ...prev, nohp: onlyNumbers }));
+  }}
     inputMode="numeric"
     pattern="[0-9]*"
               required
