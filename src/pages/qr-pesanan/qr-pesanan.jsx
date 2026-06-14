@@ -24,6 +24,10 @@ function QrPesanan() {
 
       setQrImageUrl(response.data.qr_path);
 
+        console.log("raw:", error.response.data.expired_at);
+    console.log("parsed:", new Date(error.response.data.expired_at));
+    console.log("now:", new Date());
+
       if (response.data.expired_at) {
         const expired = new Date(response.data.expired_at).getTime();
         const now = Date.now();
