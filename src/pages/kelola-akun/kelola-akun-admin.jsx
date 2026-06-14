@@ -165,8 +165,8 @@ function KelolaAkunAdmin() {
           <thead style={{ background: "#f0f0f0" }}>
             <tr>
               <th>No</th>
-              <th>nama</th>
-              <th>Nomor HP</th>
+              <th>Nama</th>
+              <th>Email</th>
               <th>Role</th>
               <th>Aksi</th>
             </tr>
@@ -185,7 +185,7 @@ function KelolaAkunAdmin() {
                 <tr key={item.id}>
                   <td>{idx + 1}</td>
                   <td>{item.name}</td>
-                  <td>{item.nohp}</td>
+                  <td>{item.email}</td>
                   <td>{item.role}</td>
                   <td className="utama-button-handle">
                     <button onClick={() => handleDelete(item.id, item.name)} className="handle-danger">
