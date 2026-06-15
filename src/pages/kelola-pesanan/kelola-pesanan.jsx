@@ -260,9 +260,7 @@ function KelolaPesanan() {
 
   const handleCetakInvoice = async () => {
 
-    const total = dataPesanan.total_harga;
-
-    setUangBayar(total);
+    setUangBayar(totalHarga);
 
     setTimeout(() => {
       window.print();
