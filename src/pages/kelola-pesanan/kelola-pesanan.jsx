@@ -258,7 +258,7 @@ function KelolaPesanan() {
   const [uangBayar, setUangBayar] = useState(0);
   const [pesananCetak, setPesananCetak] = useState(null);
 
-  const handleCetakInvoice = async () => {
+  const handleCetakInvoice = async (pesanan) => {
 
     setPesananCetak(pesanan);
     setUangBayar(pesanan.total_harga);
