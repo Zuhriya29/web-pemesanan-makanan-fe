@@ -92,6 +92,11 @@
 
 @media print {
 
+  @page {
+    size: 80mm auto; 
+    margin: 0;
+  }
+
   body * {
     visibility: hidden;
   }
@@ -102,7 +107,6 @@
   }
 
   .area-struk {
-    display: block;
     position: absolute;
     left: 0;
     top: 0;

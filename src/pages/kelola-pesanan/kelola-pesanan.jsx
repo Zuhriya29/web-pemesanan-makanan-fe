@@ -600,8 +600,8 @@ function KelolaPesanan() {
                   <p>:</p>
                 </div>
                 <div className="item-tgl-struk">
-                  <p>{new Date().toLocaleDateString("id-ID")}</p>
-                  <p>{new Date().toLocaleTimeString("id-ID")}</p>
+                  <p>{new Date(pesananCetak.updated_at).toLocaleDateString("id-ID")}</p>
+<p>{new Date(pesananCetak.updated_at).toLocaleTimeString("id-ID")}</p>
                 </div>
               </div>
 
