@@ -264,7 +264,9 @@ function KelolaPesanan() {
 
     setUangBayar(total);
 
-    setTimeout(() => window.print(), 300);
+    setTimeout(() => {
+      window.print();
+    }, 300);
   };
 
   const navigate = useNavigate();
