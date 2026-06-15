@@ -260,7 +260,8 @@ function KelolaPesanan() {
 
   const handleCetakInvoice = async () => {
 
-    setUangBayar(totalHarga);
+    setPesananCetak(pesanan);
+    setUangBayar(pesanan.total_harga);
 
     setTimeout(() => {
       window.print();
@@ -482,39 +483,71 @@ function KelolaPesanan() {
                           : item.status_pesanan}</td>
                 <td>
                   <div className="utama-button-handle">
-                  {/* DIPROSES — hanya saat pending */}
-                  {item.status_pesanan === "pending" && (
-                    <>
+                    {/* DIPROSES — hanya saat pending */}
+                    {item.status_pesanan === "pending" && (
+                      <>
+                        <button
+                          onClick={() => handleAksi(item.id, "di-proses", item.nama_pemesan)}
+                          className="handle-warning"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-clock-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" /> </svg>
+                          Diproses
+                        </button>
+
+                        <button
+                          onClick={() => handleAksi(item.id, "di-tolak", item.nama_pemesan)}
+                          className="handle-danger"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" /> </svg>
+                          Ditolak
+                        </button>
+                      </>
+                    )}
+
+                    {item.status_pesanan === "di-proses" && (
                       <button
-                        onClick={() => handleAksi(item.id, "di-proses", item.nama_pemesan)}
-                        className="handle-warning"
+                        onClick={() => handleAksi(item.id, "selesai", item.nama_pemesan)}
+                        className="handle-succes"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-clock-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" /> </svg>
-                        Diproses
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" /> </svg>
+                        Selesai
                       </button>
+                    )}
 
-                      <button
-                        onClick={() => handleAksi(item.id, "di-tolak", item.nama_pemesan)}
-                        className="handle-danger"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" /> </svg>
-                        Ditolak
-                      </button>
-                    </>
-                  )}
+                    {item.status_pesanan === "selesai" && (
+                      <>
+                        <button
+                          onClick={() => handleCetakInvoice(item)}
+                          className="handle-invoice"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-printer-fill" viewBox="0 0 16 16">
+                            <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1" />
+                            <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
+                          </svg>
+                          Cetak Invoice
+                        </button>
 
-                  {item.status_pesanan === "di-proses" && (
-                    <button
-                      onClick={() => handleAksi(item.id, "selesai", item.nama_pemesan)}
-                      className="handle-succes"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" /> </svg>
-                      Selesai
-                    </button>
-                  )}
+                        <button
+                          onClick={() => handleQrExpired(item)}
+                          className="handle-warning"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">
+                            <path d="M2 2h2v2H2z" />
+                            <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z" />
+                            <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z" />
+                            <path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z" />
+                            <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z" />
+                          </svg>
+                          QR Expired
+                        </button>
+                      </>
+                    )}
 
-                  {item.status_pesanan === "selesai" && (
-                    <>
+                    {item.status_pesanan === "di-tolak" && (
+                      <span className="text-muted" style={{ color: "var(--second-color)" }}>Pesanan Ditolak</span>
+                    )}
+
+                    {item.status_pesanan === "qr-expired" && (
                       <button
                         onClick={() => handleCetakInvoice(item)}
                         className="handle-invoice"
@@ -525,40 +558,8 @@ function KelolaPesanan() {
                         </svg>
                         Cetak Invoice
                       </button>
-
-                      <button
-                        onClick={() => handleQrExpired(item)}
-                        className="handle-warning"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">
-                          <path d="M2 2h2v2H2z" />
-                          <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z" />
-                          <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z" />
-                          <path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z" />
-                          <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z" />
-                        </svg>
-                        QR Expired
-                      </button>
-                    </>
-                  )}
-
-                  {item.status_pesanan === "di-tolak" && (
-                    <span className="text-muted" style={{ color: "var(--second-color)" }}>Pesanan Ditolak</span>
-                  )}
-
-                  {item.status_pesanan === "qr-expired" && (
-                    <button
-                      onClick={() => handleCetakInvoice(item)}
-                      className="handle-invoice"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-printer-fill" viewBox="0 0 16 16">
-                        <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1" />
-                        <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
-                      </svg>
-                      Cetak Invoice
-                    </button>
-                  )}
-</div>
+                    )}
+                  </div>
 
                 </td>
               </tr>
@@ -574,7 +575,7 @@ function KelolaPesanan() {
 
         {previewImg && (
           <div className="preview-overlay" onClick={() => setPreviewImg(null)}>
-            <img src={previewImg} className="preview-img" loading="lazy"/>
+            <img src={previewImg} className="preview-img" loading="lazy" />
           </div>
         )}
 
@@ -582,7 +583,7 @@ function KelolaPesanan() {
           <div className="area-struk">
             <div className="struk">
               <div className="title-struk">
-                <img src="./assets/images/logo-2.jpg" alt="Griya Dhahar Suroboyo" loading="lazy"/>
+                <img src="./assets/images/logo-2.jpg" alt="Griya Dhahar Suroboyo" loading="lazy" />
                 <h1>Griya Dhahar Suroboyo</h1>
                 <p>Jl. Ahmad Dahlan No.9, Mojoroto, Kota Kediri</p>
               </div>
