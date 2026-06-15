@@ -52,12 +52,9 @@ function TambahAdmin() {
       formData.append("password_confirmation", form.password_confirmation);
 
 
-      await api.post(
-        "/api/auth/tambah-akun-admin",
-        formData
-      );
-
+      const response = await api.post("/api/auth/tambah-akun-admin", formData);
       const token = response.data.token;
+
       localStorage.setItem("verify_token", token);
 
       // ✅ Jika password cocok
